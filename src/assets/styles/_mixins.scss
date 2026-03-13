@@ -1,0 +1,7 @@
+@use "variables" as *;
+
+@mixin screen-md {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
