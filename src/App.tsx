@@ -1,7 +1,7 @@
-import "./App.module.scss";
+import S from "./App.module.scss";
 
 function App() {
-  return <div>EduTree</div>;
+  return <div className={S["content"]}>EduTree</div>;
 }
 
 export default App;
