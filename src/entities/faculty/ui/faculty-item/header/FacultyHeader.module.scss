@@ -1,0 +1,55 @@
+.faculty-header {
+  @include d-flex($ai: center);
+  width: 100%;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: $space-2;
+
+  &__icon-wrapper {
+    @include d-flex($jc: center, $ai: center);
+    background-color: $color-bg-grey;
+    border-radius: $radius-md;
+    padding: $space-1;
+    margin-right: $space-2;
+  }
+
+  &__icon {
+    width: $icon-size-md;
+    height: $icon-size-md;
+    color: $color-icon-grey;
+
+    @include screen-lg {
+      width: $icon-size-lg;
+      height: $icon-size-lg;
+    }
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-right: $space-2;
+
+    @include screen-lg {
+      font-size: 20px;
+    }
+  }
+
+  &__more-wrapper {
+    @include d-flex($jc: center, $ai: center);
+    background-color: $color-bg-grey;
+    border-radius: $radius-100;
+    padding: $space-1;
+    margin-left: auto;
+  }
+
+  &__more-icon {
+    width: $icon-size-sm;
+    height: $icon-size-sm;
+
+    @include screen-lg {
+      width: $icon-size-md;
+      height: $icon-size-md;
+    }
+  }
+}
