@@ -5,3 +5,23 @@
     @content;
   }
 }
+
+@mixin d-flex($dir: row, $jc: null, $ai: null, $gap: null, $inline: null) {
+  display: if($inline, inline-flex, flex);
+
+  @if $dir {
+    flex-direction: $dir;
+  }
+
+  @if $jc {
+    justify-content: $jc;
+  }
+
+  @if $ai {
+    align-items: $ai;
+  }
+
+  @if $gap {
+    gap: $gap;
+  }
+}
