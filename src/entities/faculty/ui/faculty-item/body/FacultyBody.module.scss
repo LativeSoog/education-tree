@@ -1,0 +1,10 @@
+.faculty-body {
+  display: none;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: $space-2;
+
+  &_expanded {
+    display: block;
+  }
+}
