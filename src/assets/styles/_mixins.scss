@@ -12,6 +12,14 @@
   }
 }
 
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
 @mixin d-flex($dir: row, $jc: null, $ai: null, $gap: null, $inline: null) {
   display: if($inline, inline-flex, flex);
 
