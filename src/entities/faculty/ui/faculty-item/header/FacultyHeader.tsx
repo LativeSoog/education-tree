@@ -1,9 +1,20 @@
 import { DoubleArrow, FacultyIcon } from "@/assets/icons";
 import S from "./FacultyHeader.module.scss";
+import cn from "classnames";
 
-export const FacultyHeader = () => {
+type FacultyHeaderProps = {
+  isExpanded: boolean;
+  onToggle: () => void;
+};
+
+export const FacultyHeader = ({ isExpanded, onToggle }: FacultyHeaderProps) => {
   return (
-    <button className={S["faculty-header"]}>
+    <button
+      className={cn(
+        S["faculty-header"],
+        isExpanded && S["faculty-header_expanded"]
+      )}
+      onClick={onToggle}>
       <div className={S["faculty-header__icon-wrapper"]}>
         <FacultyIcon className={S["faculty-header__icon"]} />
       </div>

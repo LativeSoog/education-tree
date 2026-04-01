@@ -4,6 +4,11 @@
   border: 1px solid $color-border;
   border-radius: $radius-lg;
   padding: $space-2;
+  transition: border $motion-base ease-in;
+
+  @include hover {
+    border-color: $color-border-hover;
+  }
 
   &__icon-wrapper {
     @include d-flex($jc: center, $ai: center);
@@ -46,10 +51,17 @@
   &__more-icon {
     width: $icon-size-sm;
     height: $icon-size-sm;
+    transition: transform $motion-base ease-in-out;
 
     @include screen-lg {
       width: $icon-size-md;
       height: $icon-size-md;
+    }
+  }
+
+  &_expanded {
+    .faculty-header__more-icon {
+      transform: rotate(180deg);
     }
   }
 }
