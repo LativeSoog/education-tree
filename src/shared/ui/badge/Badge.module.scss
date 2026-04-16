@@ -1,0 +1,12 @@
+.badge {
+  display: inline-block;
+  font-size: var(--badge-fs, 10px);
+  border-radius: $radius-sm;
+  padding: 2px $space-1;
+  overflow: hidden;
+
+  &_blue {
+    background-color: rgb($blue-300, 0.1);
+    border: 1px solid $blue-300;
+  }
+}
