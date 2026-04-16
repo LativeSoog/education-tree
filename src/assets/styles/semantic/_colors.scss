@@ -1,0 +1,13 @@
+@use "../tokens/" as tokens;
+
+$text-primary: tokens.$blue-900;
+$text-secondary: tokens.$blue-500;
+
+$bg-grey: tokens.$grey-200;
+$bg-active: tokens.$blue-500;
+
+$border-primary: tokens.$grey-200;
+$border-active: tokens.$grey-600;
+
+$icon-primary: tokens.$blue-900;
+$icon-white: tokens.$white;
