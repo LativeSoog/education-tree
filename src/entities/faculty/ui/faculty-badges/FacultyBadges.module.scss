@@ -1,0 +1,26 @@
+.faculty-badges {
+  @include d-flex($dir: row, $gap: $space-1 $space-3);
+  flex-wrap: wrap;
+
+  &__spec {
+    @include d-flex($dir: row);
+  }
+
+  &__spec-code {
+    color: $blue-300;
+  }
+
+  &__spec-code {
+    @include d-flex($dir: row, $ai: center);
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background-color: $blue-300;
+      border-radius: $radius-100;
+      margin: 0 $space-1;
+    }
+  }
+}
