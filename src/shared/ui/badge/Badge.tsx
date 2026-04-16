@@ -2,7 +2,7 @@ import S from "./Badge.module.scss";
 import cn from "classnames";
 
 type BadgeProps = {
-  variant: "blue";
+  variant: "blue" | "teal";
   children: React.ReactNode;
   className?: string;
 };

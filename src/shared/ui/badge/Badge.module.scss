@@ -1,12 +1,19 @@
 .badge {
   display: inline-block;
   font-size: var(--badge-fs, 10px);
+  font-weight: var(--badge-fw, 600);
   border-radius: $radius-sm;
-  padding: 2px $space-1;
+  padding: $space-1 $space-2;
   overflow: hidden;
 
   &_blue {
     background-color: rgb($blue-300, 0.1);
     border: 1px solid $blue-300;
+  }
+
+  &_teal {
+    background-color: rgba($blue-500, 0.1);
+    border: 1px solid $blue-500;
+    color: $blue-550;
   }
 }
