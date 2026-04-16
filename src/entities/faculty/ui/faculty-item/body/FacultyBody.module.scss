@@ -1,10 +1,9 @@
 .faculty-body {
-  display: none;
-  border: 1px solid $color-border;
-  border-radius: $radius-lg;
-  padding: $space-2;
+  border: 2px solid $border-primary;
+  border-radius: $radius-md;
+  padding: $space-3 $space-2;
 
-  &_expanded {
-    display: block;
+  @include screen-md {
+    padding: $space-4 $space-3;
   }
 }
