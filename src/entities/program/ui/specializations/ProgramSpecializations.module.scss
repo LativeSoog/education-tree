@@ -1,0 +1,56 @@
+.program-spec {
+  @include d-flex($dir: column, $gap: $space-2);
+
+  &__header {
+    @include d-flex($dir: row, $gap: $space-1, $ai: center);
+  }
+
+  &__icon {
+    color: $icon-secondary;
+    width: $icon-size-sm;
+    height: $icon-size-sm;
+  }
+
+  &__title {
+    color: $grey-600;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    @include d-flex($dir: column, $gap: $space-2);
+  }
+
+  &__item {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: rgba($bg-grey, $alpha: 0.3);
+    border-radius: $radius-md;
+    padding: $space-2 $space-1;
+    padding-left: $space-4;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      left: 4px;
+      width: 6px;
+      height: 6px;
+      border-radius: $radius-100;
+      background-color: rgba($blue-550, 0.5);
+    }
+
+    @include screen-md {
+      font-size: 16px;
+      padding-left: $space-5;
+
+      &::before {
+        top: 16px;
+        left: 8px;
+      }
+    }
+  }
+}
