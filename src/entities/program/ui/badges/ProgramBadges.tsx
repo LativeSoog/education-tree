@@ -1,7 +1,7 @@
 import { Badge } from "@/shared/ui/badge/Badge";
 import S from "./ProgramBadges.module.scss";
 
-export const FacultyBadges = () => {
+export const ProgramBadges = () => {
   return (
     <div className={S["program-badges"]}>
       <Badge
