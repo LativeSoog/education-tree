@@ -1,4 +1,4 @@
-import { FacultyBadges } from "../../faculty-badges/FacultyBadges";
+import { ProgramContent } from "@/entities/program/ui/content/ProgramContent";
 import S from "./FacultyBody.module.scss";
 import cn from "classnames";
 
@@ -13,7 +13,7 @@ export const FacultyBody = ({ isExpanded }: FacultyBodyProps) => {
         S["faculty-body"],
         isExpanded && S["faculty-body_expanded"]
       )}>
-      <FacultyBadges />
+      <ProgramContent />
     </div>
   );
 };
