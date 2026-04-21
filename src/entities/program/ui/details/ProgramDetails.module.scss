@@ -1,0 +1,22 @@
+.program-details {
+  @include d-flex($dir: row, $gap: $space-5);
+  flex-wrap: wrap;
+
+  &__item {
+    position: relative;
+    min-width: 200px;
+    box-shadow: $shadow-soft;
+
+    @include screen-md {
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -12px;
+        width: 2px;
+        height: 100%;
+        background-color: $bg-grey;
+      }
+    }
+  }
+}
