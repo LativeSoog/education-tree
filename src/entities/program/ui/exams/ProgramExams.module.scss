@@ -32,4 +32,27 @@
       font-size: 20px;
     }
   }
+
+  &__main {
+    @include d-flex($dir: column, $gap: $space-5);
+
+    @include screen-md {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        background-color: $border-primary;
+        border-radius: $radius-md;
+      }
+    }
+  }
 }
