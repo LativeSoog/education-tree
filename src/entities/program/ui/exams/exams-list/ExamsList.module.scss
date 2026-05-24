@@ -1,5 +1,5 @@
 .exams-list {
-  @include d-flex($dir: column, $gap: $space-4);
+  @include d-flex($dir: column, $gap: $space-3);
 
   &__label {
     position: relative;
