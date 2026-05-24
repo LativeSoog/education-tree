@@ -13,9 +13,7 @@
     @include d-flex($dir: row, $ai: center, $jc: center);
     width: $icon-size-md;
     height: $icon-size-md;
-    color: $blue-550;
     font-size: 16px;
-    background-color: rgba($blue-500, 0.1);
     border-radius: $radius-100;
 
     @include screen-md {
@@ -42,9 +40,7 @@
   &__badge {
     flex-shrink: 0;
     max-width: 60px;
-    border: 1px dashed rgba($blue-550, 0.5);
     border-radius: $radius-md;
-    color: $blue-550;
     font-size: 10px;
     text-align: center;
     padding: $space-1;
@@ -53,6 +49,30 @@
     @include screen-md {
       max-width: 70px;
       font-size: 12px;
+    }
+  }
+
+  &_ege {
+    .exam-item__priority {
+      color: $blue-550;
+      background-color: rgba($blue-500, 0.1);
+    }
+
+    .exam-item__badge {
+      color: $blue-550;
+      border: 1px dashed rgba($blue-550, 0.5);
+    }
+  }
+
+  &_vi {
+    .exam-item__priority {
+      color: $blue-350;
+      background-color: rgba($blue-350, 0.1);
+    }
+
+    .exam-item__badge {
+      color: $blue-350;
+      border: 1px dashed rgba($blue-350, 0.5);
     }
   }
 }
