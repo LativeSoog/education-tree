@@ -4,7 +4,7 @@
   font-size: 14px;
   border-radius: $radius-md;
   transition: transform $motion-fast ease-in-out;
-  padding: var(--button-padding, #{$space-3 $space-6});
+  padding: var(--button-padding, #{$space-2 $space-6});
   overflow: hidden;
 
   @include screen-md {
