@@ -1,0 +1,41 @@
+.stat-item {
+  @include d-flex($dir: column, $gap: $space-2);
+
+  &__header {
+    @include d-flex($dir: row, $gap: $space-1, $ai: center);
+    position: relative;
+    padding-bottom: $space-1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, $blue-500 0%, transparent 70%);
+    }
+  }
+
+  &__icon {
+    @include d-flex($dir: row, $ai: center);
+    color: $icon-secondary;
+    width: $icon-size-sm;
+    height: $icon-size-sm;
+  }
+
+  &__title {
+    color: $grey-600;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__body {
+    font-size: var(--stat-item-font-size, 18px);
+    font-weight: var(--stat-item-font-weight, 600);
+    text-align: var(--stat-item-text-align, left);
+  }
+}

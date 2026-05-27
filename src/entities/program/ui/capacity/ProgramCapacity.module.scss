@@ -1,0 +1,37 @@
+.program-capacity {
+  @include d-flex($dir: column, $gap: $space-5);
+  position: relative;
+  background: rgba($bg-grey, 0.3);
+  border-radius: $radius-md;
+  padding: $space-5;
+  z-index: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 120px;
+    height: 120px;
+    background: url("@/assets/icons/ui/people.svg") no-repeat;
+    opacity: 0.05;
+    z-index: -1;
+  }
+
+  @include screen-md {
+    &::after {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  &__items {
+    @include d-flex($dir: column, $gap: $space-3);
+
+    @include screen-md {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: $space-5;
+    }
+  }
+}

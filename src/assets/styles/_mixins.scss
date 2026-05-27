@@ -1,13 +1,13 @@
-@use "variables" as *;
+@use "./tokens/" as tokens;
 
 @mixin screen-md {
-  @media (min-width: $bp-md) {
+  @media (min-width: tokens.$bp-md) {
     @content;
   }
 }
 
 @mixin screen-lg {
-  @media (min-width: $bp-lg) {
+  @media (min-width: tokens.$bp-lg) {
     @content;
   }
 }

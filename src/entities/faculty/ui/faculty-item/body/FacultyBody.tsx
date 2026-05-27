@@ -1,3 +1,4 @@
+import { ProgramItem } from "@/entities/program/ui/item/ProgramItem";
 import S from "./FacultyBody.module.scss";
 import cn from "classnames";
 
@@ -11,6 +12,8 @@ export const FacultyBody = ({ isExpanded }: FacultyBodyProps) => {
       className={cn(
         S["faculty-body"],
         isExpanded && S["faculty-body_expanded"]
-      )}></div>
+      )}>
+      <ProgramItem />
+    </div>
   );
 };
