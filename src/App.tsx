@@ -1,10 +1,10 @@
 import S from "./App.module.scss";
-import { FacultyList } from "./widgets/faculty-list/FacultyList";
+import { ProgramsCatalog } from "./widgets/programs-catalog/ProgramsCatalog";
 
 function App() {
   return (
     <div className={S["content"]}>
-      <FacultyList />
+      <ProgramsCatalog />
     </div>
   );
 }
