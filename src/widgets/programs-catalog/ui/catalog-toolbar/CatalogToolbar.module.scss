@@ -1,0 +1,25 @@
+.catalog-toolbar {
+  border: 2px solid $border-primary;
+  border-radius: $radius-md;
+  padding: $space-3 $space-2;
+
+  @include screen-md {
+    @include d-flex($dir: row, $jc: flex-end);
+    padding: $space-2 $space-3;
+  }
+
+  &__calc {
+    --button-width: 100%;
+    @include d-flex($dir: row, $jc: center, $ai: center, $gap: $space-1);
+
+    @include screen-md {
+      --button-max-width: 250px;
+    }
+  }
+
+  &__calc-icon {
+    width: 24px;
+    height: 24px;
+    color: $white;
+  }
+}
