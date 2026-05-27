@@ -1,0 +1,28 @@
+.button {
+  max-width: var(--button-max-width, 100%);
+  width: var(--button-width, auto);
+  font-size: 14px;
+  border-radius: $radius-md;
+  transition: transform $motion-fast ease-in-out;
+  padding: var(--button-padding, #{$space-3 $space-6});
+  overflow: hidden;
+
+  @include screen-md {
+    font-size: 16px;
+  }
+
+  &_primary {
+    color: $white;
+    background-color: $blue-550;
+  }
+
+  &_secondary {
+    color: $blue-550;
+    background-color: transparent;
+    border: 1px solid $blue-550;
+  }
+
+  @include hover {
+    transform: scale(1.03);
+  }
+}
