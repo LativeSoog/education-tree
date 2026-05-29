@@ -1,0 +1,10 @@
+.input {
+  width: var(--input-width, 100%);
+  color: var(--input-color, $text-primary);
+  font-size: var(--input-font-size, 16px);
+  font-weight: var(--input-font-weight, 600);
+  text-align: var(--input-text-align, center);
+  border: 1px solid $border-primary;
+  border-radius: $radius-md;
+  padding: var(--input-padding, $space-1 $space-3);
+}
