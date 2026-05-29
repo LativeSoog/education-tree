@@ -3,6 +3,7 @@
   position: absolute;
   inset: 0;
   background-color: rgba($black, 0.3);
+  z-index: 1;
 
   @include screen-md {
     justify-content: center;
@@ -15,7 +16,6 @@
     background-color: $white;
     border-radius: $radius-md $radius-md 0 0;
     padding: $space-4 $space-2;
-    z-index: 1;
 
     @include screen-md {
       max-width: 560px;
@@ -25,6 +25,10 @@
     }
   }
 
+  &__header {
+    @include d-flex($dir: column, $gap: $space-2);
+  }
+
   &__title {
     font-size: 16px;
     font-weight: 600;
@@ -32,6 +36,16 @@
 
     @include screen-md {
       font-size: 20px;
+    }
+  }
+
+  &__description {
+    font-size: 12px;
+    font-weight: 600;
+    color: $grey-600;
+
+    @include screen-md {
+      font-size: 14px;
     }
   }
 }
