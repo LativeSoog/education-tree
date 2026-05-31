@@ -1,0 +1,49 @@
+.exam-label {
+  @include d-flex($dir: row, $gap: $space-2, $ai: center);
+
+  &__number {
+    @include d-flex($dir: column, $ai: center, $jc: center);
+    flex-shrink: 0;
+    width: $icon-size-md;
+    height: $icon-size-md;
+    font-size: 14px;
+    border-radius: $radius-100;
+
+    @include screen-md {
+      font-size: 16px;
+    }
+  }
+
+  &__list {
+    @include d-flex($dir: row);
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  &__item {
+    font-size: 14px;
+
+    &:not(:last-child)::after {
+      content: "/";
+      margin: 0 $space-1;
+    }
+
+    @include screen-md {
+      font-size: 16px;
+    }
+  }
+
+  &_ege {
+    .exam-label__number {
+      color: $blue-550;
+      background-color: rgba($blue-500, 0.1);
+    }
+  }
+
+  &_vi {
+    .exam-label__number {
+      color: $blue-350;
+      background-color: rgba($blue-350, 0.1);
+    }
+  }
+}
