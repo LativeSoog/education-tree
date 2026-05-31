@@ -1,0 +1,56 @@
+.exam-item {
+  display: grid;
+  grid-template-columns: 1fr max-content minmax(40px, auto);
+  align-items: center;
+  gap: $space-4;
+
+  &__info {
+    @include d-flex($dir: row, $ai: center, $gap: $space-2);
+  }
+
+  &__number {
+    @include d-flex($dir: column, $ai: center, $jc: center);
+    width: $icon-size-md;
+    height: $icon-size-md;
+    color: $blue-550;
+    font-size: 14px;
+    background-color: rgba($blue-500, 0.1);
+    border-radius: $radius-100;
+
+    @include screen-md {
+      font-size: 16px;
+    }
+  }
+
+  &__name {
+    font-size: 14px;
+    font-weight: 500;
+
+    @include screen-md {
+      font-size: 16px;
+    }
+  }
+
+  &__marks-wrapper {
+    @include d-flex($dir: column, $ai: center);
+  }
+
+  &__mark-value {
+    --input-font-size: 18px;
+    max-width: 5ch;
+  }
+
+  &__mark-min {
+    color: $grey-600;
+    font-size: 10px;
+  }
+
+  &__remove {
+    @include d-flex($dir: column, $ai: center, $jc: center);
+  }
+
+  &__remove-icon {
+    width: $icon-size-md;
+    height: $icon-size-md;
+  }
+}

@@ -20,6 +20,7 @@ svg {
 }
 
 button {
+  font-family: inherit;
   background-color: transparent;
   border: none;
   outline: none;

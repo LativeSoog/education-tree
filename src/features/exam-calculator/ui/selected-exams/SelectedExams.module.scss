@@ -1,0 +1,26 @@
+.selected-exams {
+  @include d-flex($dir: column, $gap: $space-2);
+
+  &__title {
+    font-size: 14px;
+    font-weight: 600;
+
+    @include screen-md {
+      font-size: 16px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    border: 1px solid $border-primary;
+    border-radius: $radius-md;
+  }
+
+  &__item {
+    padding: $space-2;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $border-primary;
+    }
+  }
+}
