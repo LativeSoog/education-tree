@@ -1,6 +1,8 @@
 export type Exam = {
   id: string;
-  type: "ege" | "vi";
+  type: ExamType;
   name: string;
   minScore: number;
 };
+
+export type ExamType = "ege" | "vi";
