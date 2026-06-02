@@ -8,35 +8,6 @@
     gap: $space-3;
   }
 
-  &__priority {
-    flex-shrink: 0;
-    @include d-flex($dir: row, $ai: center, $jc: center);
-    width: $icon-size-md;
-    height: $icon-size-md;
-    font-size: 16px;
-    border-radius: $radius-100;
-
-    @include screen-md {
-      width: $icon-size-lg;
-      height: $icon-size-lg;
-      font-size: 18px;
-    }
-  }
-
-  &__subject {
-    font-size: 14px;
-    line-height: 1;
-
-    &:not(:last-child)::after {
-      content: "/";
-      padding: 0 $space-1;
-    }
-
-    @include screen-md {
-      font-size: 16px;
-    }
-  }
-
   &__badge {
     flex-shrink: 0;
     max-width: 60px;
@@ -53,11 +24,6 @@
   }
 
   &_ege {
-    .exam-item__priority {
-      color: $blue-550;
-      background-color: rgba($blue-500, 0.1);
-    }
-
     .exam-item__badge {
       color: $blue-550;
       border: 1px dashed rgba($blue-550, 0.5);
@@ -65,11 +31,6 @@
   }
 
   &_vi {
-    .exam-item__priority {
-      color: $blue-350;
-      background-color: rgba($blue-350, 0.1);
-    }
-
     .exam-item__badge {
       color: $blue-350;
       border: 1px dashed rgba($blue-350, 0.5);

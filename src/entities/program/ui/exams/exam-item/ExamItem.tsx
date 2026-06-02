@@ -1,27 +1,28 @@
 import S from "./ExamItem.module.scss";
+import { ExamLabel } from "@/entities/exam/ui/exam-label/ExamLabel";
+import type { Exam } from "@/entities/exam";
 import cn from "classnames";
 
 type ExamItemProps = {
-  priority: string;
-  exams: string[];
-  choice?: boolean;
-  variant: "ege" | "vi";
+  priority: number;
+  exams: Pick<Exam, "id" | "name">[];
+  variant: Exam["type"];
+  choice: boolean;
 };
 
 export const ExamItem = ({
   priority,
   exams,
-  choice = false,
   variant,
+  choice,
 }: ExamItemProps) => {
   return (
     <div className={cn(S["exam-item"], S[`exam-item_${variant}`])}>
-      <div className={S["exam-item__priority"]}>{priority}</div>
-      <div className={S["exam-item__list"]}>
-        {exams.map((exam) => (
-          <span className={S["exam-item__subject"]}>{exam}</span>
-        ))}
-      </div>
+      <ExamLabel
+        number={priority}
+        exams={exams}
+        variant={variant}
+      />
       {choice && <div className={S["exam-item__badge"]}>Предмет по выбору</div>}
     </div>
   );

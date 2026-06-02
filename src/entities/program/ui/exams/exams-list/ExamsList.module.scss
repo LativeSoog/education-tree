@@ -20,7 +20,8 @@
     }
   }
 
-  &__items {
+  &__list {
     @include d-flex($dir: column, $gap: $space-3);
+    list-style: none;
   }
 }
