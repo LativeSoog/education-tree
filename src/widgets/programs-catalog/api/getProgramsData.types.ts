@@ -1,3 +1,11 @@
+import type { Exam } from "@/entities/exam";
+import type { Faculty } from "@/entities/faculty/model/types";
+import type {
+  ProgramDirection,
+  ProgramEduForm,
+} from "@/entities/program/model/types";
+import type { ProgramDto } from "./getProgramsData.dto";
+
 export type ProgramsDataManifest = {
   version: string;
   files: {
@@ -10,11 +18,11 @@ export type ProgramsDataManifest = {
 };
 
 export type ProgramsData = {
-  faculties: unknown;
-  directions: unknown;
-  eduForms: unknown;
-  exams: unknown;
-  programs: unknown;
+  faculties: Faculty[];
+  directions: ProgramDirection[];
+  eduForms: ProgramEduForm[];
+  exams: Exam[];
+  programs: ProgramDto[];
 };
 
 type ProgramsDataResponseSuccess = {
