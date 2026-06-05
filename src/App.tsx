@@ -1,16 +1,16 @@
 import S from "./App.module.scss";
-import type { ProgramsCatalogDataResponse } from "./widgets/programs-catalog/model/types";
 import { ProgramsCatalog } from "./widgets/programs-catalog/ProgramsCatalog";
+import type { ProgramsDataResponse } from "./widgets/programs-catalog/api/getProgramsData.types";
 
 type AppProps = {
-  programsResponse: ProgramsCatalogDataResponse;
+  programsResponse: ProgramsDataResponse;
 };
 
 function App({ programsResponse }: AppProps) {
   return (
     <div className={S["content"]}>
       {programsResponse.ok ? (
-        <ProgramsCatalog catalog={programsResponse.data} />
+        <ProgramsCatalog data={programsResponse.data} />
       ) : (
         <p>Произошла ошибка: {programsResponse.error.message}</p>
       )}
