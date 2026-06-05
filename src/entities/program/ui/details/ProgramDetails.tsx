@@ -1,28 +1,44 @@
 import { StatItem } from "@/shared/ui/stat-item/StatItem";
 import S from "./ProgramDetails.module.scss";
 import { BookIcon } from "@/assets/icons";
+import type { Program } from "../../model/types";
 
-export const ProgramDetails = () => {
+type ProgramDetailsProps = Pick<
+  Program,
+  "duration" | "passingScore" | "tuitionFees"
+>;
+
+export const ProgramDetails = ({
+  duration,
+  passingScore,
+  tuitionFees,
+}: ProgramDetailsProps) => {
   return (
     <div className={S["program-details"]}>
-      <StatItem
-        icon={<BookIcon />}
-        title="Срок обучения"
-        className={S["program-details__item"]}>
-        5 лет 6 мес
-      </StatItem>
-      <StatItem
-        icon={<BookIcon />}
-        title="Проходной балл 2025"
-        className={S["program-details__item"]}>
-        248 баллов
-      </StatItem>
-      <StatItem
-        icon={<BookIcon />}
-        title="Стоимость обучения"
-        className={S["program-details__item"]}>
-        250.000 Р
-      </StatItem>
+      {duration && (
+        <StatItem
+          icon={<BookIcon />}
+          title="Срок обучения"
+          className={S["program-details__item"]}>
+          {duration}
+        </StatItem>
+      )}
+      {passingScore && (
+        <StatItem
+          icon={<BookIcon />}
+          title="Проходной балл 2025"
+          className={S["program-details__item"]}>
+          {passingScore}
+        </StatItem>
+      )}
+      {tuitionFees && (
+        <StatItem
+          icon={<BookIcon />}
+          title="Стоимость обучения"
+          className={S["program-details__item"]}>
+          {tuitionFees}
+        </StatItem>
+      )}
     </div>
   );
 };

@@ -3,7 +3,7 @@ import cn from "classnames";
 
 type CapacityItemProps = {
   name: string;
-  count: string;
+  count: string | number;
   className?: string;
 };
 
