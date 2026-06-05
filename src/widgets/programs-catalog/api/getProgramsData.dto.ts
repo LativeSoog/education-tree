@@ -14,12 +14,12 @@ export type ProgramDto = {
   examGroups: ProgramExamGroupDto[];
 };
 
-type ProgramExamGroupDto = {
+export type ProgramExamGroupDto = {
   type: ExamType;
   items: ProgramExamItemDto[];
 };
 
-type ProgramExamItemDto = {
+export type ProgramExamItemDto = {
   priority: number;
   examIds: string[];
 };
