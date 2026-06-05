@@ -14,9 +14,9 @@ export type Program = {
 
 export type ProgramPlaces = {
   budget: number | null;
-  specialQuote: number | null;
-  separateQuote: number | null;
-  targetQuote: number | null;
+  specialQuota: number | null;
+  separateQuota: number | null;
+  targetQuota: number | null;
   paid: number | null;
 };
 
