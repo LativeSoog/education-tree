@@ -9,7 +9,7 @@ export type Program = {
   passingScore: number | null;
   tuitionFees: number | null;
   places: ProgramPlaces;
-  examGroups: [];
+  examGroups: ProgramExamGroup[]
 };
 
 export type ProgramPlaces = {
