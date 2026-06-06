@@ -1,4 +1,12 @@
 .program-content {
+  border: 2px solid $border-primary;
+  border-radius: $radius-md;
+  padding: $space-3 $space-2;
+
+  @include screen-md {
+    padding: $space-4 $space-3;
+  }
+
   &__specializations,
   &__details {
     margin-top: $space-4;

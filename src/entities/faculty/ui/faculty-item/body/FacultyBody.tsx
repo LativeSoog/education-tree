@@ -15,12 +15,14 @@ export const FacultyBody = ({ programs, isExpanded }: FacultyBodyProps) => {
         S["faculty-body"],
         isExpanded && S["faculty-body_expanded"]
       )}>
-      {programs.map((program) => (
-        <ProgramItem
-          key={program.id}
-          program={program}
-        />
-      ))}
+      <div className={S["faculty-body__content"]}>
+        {programs.map((program) => (
+          <ProgramItem
+            key={program.id}
+            program={program}
+          />
+        ))}
+      </div>
     </div>
   );
 };
