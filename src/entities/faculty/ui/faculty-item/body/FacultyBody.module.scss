@@ -1,9 +1,14 @@
 .faculty-body {
-  border: 2px solid $border-primary;
-  border-radius: $radius-md;
-  padding: $space-3 $space-2;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows $motion-base ease-in;
 
-  @include screen-md {
-    padding: $space-4 $space-3;
+  &_expanded {
+    grid-template-rows: 1fr;
+  }
+
+  &__content {
+    min-width: 0;
+    overflow: hidden;
   }
 }

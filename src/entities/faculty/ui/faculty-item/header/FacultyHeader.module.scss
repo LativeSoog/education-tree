@@ -9,6 +9,12 @@
     padding: $space-4 $space-3;
   }
 
+  &_expanded {
+    .faculty-header__more-wrapper {
+      transform: rotate(180deg);
+    }
+  }
+
   &__icon-wrapper,
   &__more-wrapper {
     flex-shrink: 0;
@@ -50,6 +56,7 @@
     @include d-flex($dir: row, $ai: center);
     border-radius: $radius-100;
     margin-left: auto;
+    transition: transform $motion-base ease-in;
   }
 
   &__more-icon {
