@@ -1,21 +1,27 @@
 import { Badge } from "@/shared/ui/badge/Badge";
 import S from "./ProgramBadges.module.scss";
+import type { ProgramDirection, ProgramEduForm } from "../../model/types";
 
-export const ProgramBadges = () => {
+type ProgramBadgesProps = {
+  direction: Pick<ProgramDirection, "code" | "name">;
+  form: Pick<ProgramEduForm, "name">;
+};
+
+export const ProgramBadges = ({ direction, form }: ProgramBadgesProps) => {
   return (
     <div className={S["program-badges"]}>
       <Badge
         variant="blue"
         className={S["program-badges__spec"]}>
-        <span className={S["program-badges__spec-code"]}>44.03.01</span>
+        <span className={S["program-badges__spec-code"]}>{direction.code}</span>
         <span className={S["program-badges__spec-label"]}>
-          Педагогическое образование (с двумя профилями подготовки)
+          {direction.name}
         </span>
       </Badge>
       <Badge
         variant="teal"
         className={S["program-badges__form"]}>
-        Очно-заочная
+        {form.name}
       </Badge>
     </div>
   );

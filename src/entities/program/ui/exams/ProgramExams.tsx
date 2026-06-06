@@ -1,8 +1,18 @@
 import { ExamIcon } from "@/assets/icons";
 import S from "./ProgramExams.module.scss";
 import { ExamsList } from "./exams-list/ExamsList";
+import type { ProgramExamGroup } from "../../model/types";
 
-export const ProgramExams = () => {
+type ProgramExamsProps = {
+  examGroups: ProgramExamGroup[];
+};
+
+export const ProgramExams = ({ examGroups }: ProgramExamsProps) => {
+  const examGroupLabels: Record<ProgramExamGroup["type"], string> = {
+    ege: "Для поступающих на базе среднего общего образования (11 кл.) и высшего образования",
+    vi: "Для поступающих на базе среднего профессионального образования",
+  };
+
   return (
     <section className={S["program-exams"]}>
       <div className={S["program-exams__header"]}>
@@ -12,14 +22,14 @@ export const ProgramExams = () => {
         <h4 className={S["program-exams__title"]}>Вступительные испытания</h4>
       </div>
       <div className={S["program-exams__main"]}>
-        <ExamsList
-          label="Для поступающих на базе среднего общего образования (11 кл.) и высшего образования"
-          variant="ege"
-        />
-        <ExamsList
-          label="Для поступающих на базе среднего профессионального образования"
-          variant="vi"
-        />
+        {examGroups.map((group) => (
+          <ExamsList
+            key={group.type}
+            label={examGroupLabels[group.type]}
+            items={group.items}
+            variant={group.type}
+          />
+        ))}
       </div>
     </section>
   );
