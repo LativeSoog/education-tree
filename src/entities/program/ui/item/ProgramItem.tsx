@@ -34,7 +34,7 @@ export const ProgramItem = ({ program }: ProgramItemProps) => {
         <ProgramCapacity places={program.places} />
       </div>
       <div className={S["program-content__exams"]}>
-        <ProgramExams />
+        <ProgramExams examGroups={program.examGroups} />
       </div>
     </div>
   );
