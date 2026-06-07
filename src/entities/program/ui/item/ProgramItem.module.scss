@@ -9,6 +9,11 @@
 
   &__specializations,
   &__details {
-    margin-top: $space-4;
+    margin-top: $space-5;
+  }
+
+  &__capacity,
+  &__exams {
+    margin-top: $space-6;
   }
 }
