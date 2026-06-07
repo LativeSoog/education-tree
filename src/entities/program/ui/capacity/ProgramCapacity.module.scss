@@ -3,7 +3,7 @@
   position: relative;
   background: rgba($bg-grey, 0.3);
   border-radius: $radius-md;
-  padding: $space-5;
+  padding: $space-5 $space-3;
   z-index: 0;
 
   &::after {
@@ -23,6 +23,23 @@
       width: 100px;
       height: 100px;
     }
+  }
+
+  &__header {
+    @include d-flex($dir: row, $gap: $space-2, $ai: center);
+  }
+
+  &__icon-wrapper {
+    @include d-flex($dir: column, $ai: center, $jc: center);
+    background-color: rgba($blue-500, 0.1);
+    border-radius: $radius-md;
+    padding: $space-1;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    color: $blue-550;
   }
 
   &__items {
