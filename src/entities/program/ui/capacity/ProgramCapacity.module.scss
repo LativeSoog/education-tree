@@ -42,6 +42,14 @@
     color: $blue-550;
   }
 
+  &__title {
+    font-size: 16px;
+
+    @include screen-md {
+      font-size: 20px;
+    }
+  }
+
   &__items {
     @include d-flex($dir: column, $gap: $space-3);
 
