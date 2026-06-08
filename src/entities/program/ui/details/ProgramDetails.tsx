@@ -1,6 +1,6 @@
 import { StatItem } from "@/shared/ui/stat-item/StatItem";
 import S from "./ProgramDetails.module.scss";
-import { BookIcon } from "@/assets/icons";
+import { BookIcon, CalendarIcon, RewardIcon } from "@/assets/icons";
 import type { Program } from "../../model/types";
 
 type ProgramDetailsProps = Pick<
@@ -17,7 +17,7 @@ export const ProgramDetails = ({
     <div className={S["program-details"]}>
       {duration && (
         <StatItem
-          icon={<BookIcon />}
+          icon={<CalendarIcon />}
           title="Срок обучения"
           className={S["program-details__item"]}>
           {duration}
@@ -25,7 +25,7 @@ export const ProgramDetails = ({
       )}
       {passingScore && (
         <StatItem
-          icon={<BookIcon />}
+          icon={<RewardIcon />}
           title="Проходной балл 2025"
           className={S["program-details__item"]}>
           {passingScore}
