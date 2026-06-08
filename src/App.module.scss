@@ -16,6 +16,8 @@
 }
 
 .content :where(h1, h2, h3, h4, p, ul, ol, li, button) {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   margin: 0;
   padding: 0;
 }
