@@ -9,22 +9,23 @@ type ProgramSpecializationsProps = {
 export const ProgramSpecializations = ({
   profiles,
 }: ProgramSpecializationsProps) => {
-
   return (
     <div className={S["program-spec"]}>
       <div className={S["program-spec__header"]}>
-        <BookIcon className={S["program-spec__icon"]} />
-        <p className={S["program-spec__title"]}>Образовательные программы</p>
+        <div className={S["program-spec__icon-wrapper"]}>
+          <BookIcon className={S["program-spec__icon"]} />
+        </div>
+        <h3 className={S["program-spec__title"]}>Образовательные программы</h3>
       </div>
-      <div className={S["program-spec__list"]}>
+      <ul className={S["program-spec__list"]}>
         {profiles.map((profile, index) => (
-          <p
+          <li
             key={`${profile}-${index}`}
             className={S["program-spec__item"]}>
             {profile}
-          </p>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
