@@ -19,7 +19,7 @@ export const ProgramExams = ({ examGroups }: ProgramExamsProps) => {
         <div className={S["program-exams__icon-wrapper"]}>
           <ExamIcon className={S["program-exams__icon"]} />
         </div>
-        <h4 className={S["program-exams__title"]}>Вступительные испытания</h4>
+        <h3 className={S["program-exams__title"]}>Вступительные испытания</h3>
       </div>
       <div className={S["program-exams__main"]}>
         {examGroups.map((group) => (
