@@ -1,32 +1,62 @@
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource/inter/600.css";
-@import "@fontsource/inter/700.css";
-@import "@fontsource/inter/800.css";
+@import "@fontsource/inter/cyrillic-400.css";
+@import "@fontsource/inter/cyrillic-500.css";
+@import "@fontsource/inter/cyrillic-600.css";
+@import "@fontsource/inter/cyrillic-700.css";
 
-* {
+:where(#edu-tree-root) {
+  font-family: "Inter", system-ui, sans-serif;
+  color: #204462;
+}
+
+:where(#edu-tree-root),
+:where(#edu-tree-root) *,
+:where(#edu-tree-root) *::before,
+:where(#edu-tree-root) *::after {
+  box-sizing: border-box;
+}
+
+#edu-tree-root :where(h1, h2, h3, h4, p, ul, ol, li) {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+#edu-tree-root
+  :where(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    a,
+    button,
+    input,
+    textarea,
+    select,
+    li
+  ) {
+  font-family: inherit;
+}
+
+:where(#edu-tree-root) :where(ul, ol) {
+  padding-left: 0;
+  list-style: none;
+}
+
+:where(#edu-tree-root) :where(button) {
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
   padding: 0;
   margin: 0;
 }
 
-body {
-  font-family: "Inter", system-ui, sans-serif;
-  box-sizing: border-box;
-  color: #204462;
-}
-
-svg {
-  vertical-align: middle;
-}
-
-button {
-  font-family: inherit;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  color: #204462;
-}
-
-button:hover {
+:where(#edu-tree-root) :where(button:hover) {
   cursor: pointer;
+}
+
+:where(#edu-tree-root) :where(svg) {
+  vertical-align: middle;
 }
