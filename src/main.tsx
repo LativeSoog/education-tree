@@ -10,7 +10,7 @@ const PROGRAMS_DATA_MANIFEST_URL = import.meta.env.PROD
 
 const programsDataResponse = await getProgramsData(PROGRAMS_DATA_MANIFEST_URL);
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById("edu-tree-root")!).render(
   <StrictMode>
     <App programsResponse={programsDataResponse} />
   </StrictMode>
