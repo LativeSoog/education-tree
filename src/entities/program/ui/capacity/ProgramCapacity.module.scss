@@ -37,9 +37,14 @@
   }
 
   &__icon {
-    width: 24px;
-    height: 24px;
-    color: $blue-550;
+    width: $icon-size-md;
+    height: $icon-size-md;
+    color: $icon-secondary;
+
+    @include screen-md {
+      width: $icon-size-lg;
+      height: $icon-size-lg;
+    }
   }
 
   &__title {
