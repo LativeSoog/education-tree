@@ -1,4 +1,4 @@
-import { UsersIcon } from "@/assets/icons";
+import { UsersIcon, WarnIcon } from "@/assets/icons";
 import type { ProgramPlaces } from "../../model/types";
 import { CapacityItem } from "./capacity-item/CapacityItem";
 import S from "./ProgramCapacity.module.scss";
@@ -41,6 +41,20 @@ export const ProgramCapacity = ({ places }: ProgramCapacityProps) => {
             count={places.targetQuota}
           />
         )}
+        {places.paid !== null && places.paid > 0 && (
+          <CapacityItem
+            name="Договор"
+            count={places.paid}
+          />
+        )}
+      </div>
+      <div className={S["program-capacity__note"]}>
+        <span className={S["program-capacity__note-icon"]}>
+          <WarnIcon />
+        </span>
+        <span className={S["program-capacity__note-text"]}>
+          Места по квотам выделяются из общего количества бюджетных мест
+        </span>
       </div>
     </div>
   );

@@ -1,9 +1,10 @@
 .program-capacity {
-  @include d-flex($dir: column, $gap: $space-5);
+  @include d-flex($dir: column);
   position: relative;
   background: rgba($bg-grey, 0.3);
   border-radius: $radius-md;
   padding: $space-5 $space-3;
+  padding-bottom: $space-3;
   z-index: 0;
 
   &::after {
@@ -58,11 +59,43 @@
 
   &__items {
     @include d-flex($dir: column, $gap: $space-3);
+    margin-top: $space-5;
 
     @include screen-md {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: $space-5;
+    }
+  }
+
+  &__note {
+    @include d-flex($dir: row, $ai: center, $gap: $space-1);
+    margin-top: $space-7;
+  }
+
+  &__note-icon {
+    @include d-flex($dir: column, $ai: center, $jc: center);
+    align-self: start;
+
+    svg {
+      width: $icon-size-sm;
+      height: $icon-size-sm;
+      color: $blue-550;
+
+      @include screen-md {
+        width: $icon-size-md;
+        height: $icon-size-md;
+      }
+    }
+  }
+
+  &__note-text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+
+    @include screen-md {
+      font-size: 14px;
     }
   }
 }
