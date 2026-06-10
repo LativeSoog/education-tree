@@ -1,7 +1,8 @@
 import { StatItem } from "@/shared/ui/stat-item/StatItem";
 import S from "./ProgramDetails.module.scss";
-import { BookIcon, CalendarIcon, RewardIcon } from "@/assets/icons";
+import { CalendarIcon, RewardIcon, RubleIcon } from "@/assets/icons";
 import type { Program } from "../../model/types";
+import formatNumber from "@/shared/lib/format/formatNumber";
 
 type ProgramDetailsProps = Pick<
   Program,
@@ -33,10 +34,10 @@ export const ProgramDetails = ({
       )}
       {tuitionFees && (
         <StatItem
-          icon={<BookIcon />}
+          icon={<RubleIcon />}
           title="Стоимость обучения"
           className={S["program-details__item"]}>
-          {tuitionFees}
+          {formatNumber(tuitionFees)} &#8381;/год
         </StatItem>
       )}
     </div>
