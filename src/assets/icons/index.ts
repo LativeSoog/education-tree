@@ -8,5 +8,6 @@ export { default as TrashIcon } from "./ui/trash.svg?react";
 export { default as CalendarIcon } from "./ui/calendar.svg?react";
 export { default as RewardIcon } from "./ui/reward.svg?react";
 export { default as RubleIcon } from "./ui/ruble.svg?react";
+export { default as WarnIcon } from "./ui/warn.svg?react";
 
 export { default as DoubleArrow } from "./arrows/double-arrow.svg?react";
