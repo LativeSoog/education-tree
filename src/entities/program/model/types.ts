@@ -9,7 +9,7 @@ export type Program = {
   passingScore: number | null;
   tuitionFees: number | null;
   places: ProgramPlaces;
-  examGroups: ProgramExamGroup[]
+  examGroups: ProgramExamGroup[];
 };
 
 export type ProgramPlaces = {
@@ -17,6 +17,7 @@ export type ProgramPlaces = {
   specialQuota: number | null;
   separateQuota: number | null;
   targetQuota: number | null;
+  grant: number | null;
   paid: number | null;
 };
 
