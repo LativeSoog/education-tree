@@ -35,6 +35,12 @@ export const ProgramCapacity = ({ places }: ProgramCapacityProps) => {
             count={places.targetQuota}
           />
         )}
+        {places.grant !== null && places.grant > 0 && (
+          <CapacityItem
+            name="Грантовые места"
+            count={places.grant}
+          />
+        )}
       </div>
     </div>
   );
