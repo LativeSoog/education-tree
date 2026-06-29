@@ -1,0 +1,35 @@
+.capacity-note {
+  @include d-flex($dir: row, $ai: center, $gap: $space-1);
+
+  &__icon {
+    @include d-flex($dir: column, $ai: center, $jc: center);
+    align-self: start;
+
+    svg {
+      width: $icon-size-sm;
+      height: $icon-size-sm;
+      color: $blue-550;
+
+      @include screen-md {
+        width: $icon-size-md;
+        height: $icon-size-md;
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+
+    @include screen-md {
+      font-size: 14px;
+    }
+  }
+}
+
+.capacity-notes {
+  &__link {
+    color: $blue-550;
+  }
+}

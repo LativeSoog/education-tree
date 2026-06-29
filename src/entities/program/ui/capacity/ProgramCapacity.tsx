@@ -1,13 +1,20 @@
-import { UsersIcon, WarnIcon } from "@/assets/icons";
+import { UsersIcon } from "@/assets/icons";
 import type { ProgramPlaces } from "../../model/types";
 import { CapacityItem } from "./capacity-item/CapacityItem";
 import S from "./ProgramCapacity.module.scss";
+import { ProgramCapacityNotes } from "./capacity-notes/ProgramCapacityNotes";
 
 type ProgramCapacityProps = {
   places: ProgramPlaces;
 };
 
 export const ProgramCapacity = ({ places }: ProgramCapacityProps) => {
+  const showQuotasNote =
+    (places.specialQuota !== null && places.specialQuota > 0) ||
+    (places.separateQuota !== null && places.separateQuota > 0) ||
+    (places.targetQuota !== null && places.targetQuota > 0);
+  const showGrantNote = places.grant !== null && places.grant > 0;
+
   return (
     <div className={S["program-capacity"]}>
       <div className={S["program-capacity__header"]}>
@@ -43,7 +50,7 @@ export const ProgramCapacity = ({ places }: ProgramCapacityProps) => {
         )}
         {places.grant !== null && places.grant > 0 && (
           <CapacityItem
-            name="Грантовые места"
+            name="Грантовые места*"
             count={places.grant}
           />
         )}
@@ -55,12 +62,10 @@ export const ProgramCapacity = ({ places }: ProgramCapacityProps) => {
         )}
       </div>
       <div className={S["program-capacity__note"]}>
-        <span className={S["program-capacity__note-icon"]}>
-          <WarnIcon />
-        </span>
-        <span className={S["program-capacity__note-text"]}>
-          Места по квотам выделяются из общего количества бюджетных мест
-        </span>
+        <ProgramCapacityNotes
+          showQuotas={showQuotasNote}
+          showGrant={showGrantNote}
+        />
       </div>
     </div>
   );
