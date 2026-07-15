@@ -1,0 +1,44 @@
+.notice {
+  @include d-flex($ai: center, $gap: 8px);
+  align-self: start;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--notice-color) 8%, transparent) 0%,
+    color-mix(in srgb, var(--notice-color) 12%, transparent) 100%
+  );
+  border-left: 4px solid var(--notice-color);
+  border-radius: $radius-sm;
+  padding: $space-1 $space-2;
+
+  &_info {
+    --notice-color: #{$blue-300};
+  }
+
+  &__icon {
+    @include d-flex($ai: center, $jc: center);
+    flex-shrink: 0;
+    width: $icon-size-sm;
+    height: $icon-size-sm;
+    color: $blue-350;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      color: inherit;
+    }
+
+    @include screen-md {
+      width: $icon-size-md;
+      height: $icon-size-md;
+    }
+  }
+
+  &__content {
+    font-size: 12px;
+    line-height: 1.2;
+
+    @include screen-md {
+      font-size: 14px;
+    }
+  }
+}
