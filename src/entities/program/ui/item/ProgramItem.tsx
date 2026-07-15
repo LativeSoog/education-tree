@@ -2,8 +2,9 @@ import type { Program } from "../../model/types";
 import { ProgramBadges } from "../badges/ProgramBadges";
 import { ProgramCapacity } from "../capacity/ProgramCapacity";
 import { ProgramDetails } from "../details/ProgramDetails";
+import { ProgramProfiles } from "../profiles/ProgramProfiles";
 import { ProgramExams } from "../exams/ProgramExams";
-import { ProgramSpecializations } from "../specializations/ProgramSpecializations";
+
 import S from "./ProgramItem.module.scss";
 
 type ProgramItemProps = {
@@ -11,7 +12,6 @@ type ProgramItemProps = {
 };
 
 export const ProgramItem = ({ program }: ProgramItemProps) => {
-  console.log(program);
   return (
     <div className={S["program-content"]}>
       <div className={S["program-content__badges"]}>
@@ -21,7 +21,7 @@ export const ProgramItem = ({ program }: ProgramItemProps) => {
         />
       </div>
       <div className={S["program-content__specializations"]}>
-        <ProgramSpecializations profiles={program.profiles} />
+        <ProgramProfiles profiles={program.profiles} />
       </div>
       <div className={S["program-content__details"]}>
         <ProgramDetails
