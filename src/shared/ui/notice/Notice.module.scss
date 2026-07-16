@@ -6,12 +6,15 @@
     color-mix(in srgb, var(--notice-color) 8%, transparent) 0%,
     color-mix(in srgb, var(--notice-color) 12%, transparent) 100%
   );
+  border: 1px solid
+    color-mix(in srgb, var(--notice-border-color) 10%, transparent);
   border-left: 4px solid var(--notice-color);
   border-radius: $radius-sm;
   padding: $space-1 $space-2;
 
   &_info {
     --notice-color: #{$blue-300};
+    --notice-border-color: #{$blue-350};
   }
 
   &__icon {
