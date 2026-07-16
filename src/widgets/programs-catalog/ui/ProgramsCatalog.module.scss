@@ -1,0 +1,9 @@
+.programs-catalog {
+  &__faculties {
+    @include d-flex($dir: column, $gap: $space-4);
+
+    @include screen-md {
+      gap: $space-5;
+    }
+  }
+}
