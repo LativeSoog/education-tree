@@ -23,7 +23,7 @@ export const FacultyItem = ({ faculty, programs }: FacultyItemProps) => {
   );
 
   return (
-    <div className={S["faculty-item"]}>
+    <section className={S["faculty-item"]}>
       <FacultyHeader
         name={faculty.name}
         totalProfiles={totalProfiles}
@@ -34,6 +34,6 @@ export const FacultyItem = ({ faculty, programs }: FacultyItemProps) => {
         programs={programs}
         isExpanded={isExpanded}
       />
-    </div>
+    </section>
   );
 };
