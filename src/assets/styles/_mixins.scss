@@ -21,7 +21,11 @@
 }
 
 @mixin d-flex($dir: row, $jc: null, $ai: null, $gap: null, $inline: null) {
-  display: if($inline, inline-flex, flex);
+  @if $inline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
 
   @if $dir {
     flex-direction: $dir;
