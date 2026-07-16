@@ -1,6 +1,7 @@
 .program-content {
   border: 2px solid $border-primary;
   border-radius: $radius-md;
+  box-shadow: $shadow-soft;
   padding: $space-3 $space-2;
 
   @include screen-md {
@@ -14,6 +15,7 @@
     border: 1px solid $border-primary;
     border-radius: $radius-md;
     padding: $space-5 $space-3;
+    margin-top: $space-6;
     overflow: hidden;
 
     &::after {
@@ -29,13 +31,13 @@
     }
   }
 
-  &__profiles,
-  &__details {
-    margin-top: $space-5;
-  }
-
+  &__details,
   &__capacity,
   &__exams {
-    margin-top: $space-6;
+    margin-top: $space-7;
+
+    @include screen-md {
+      margin-top: $space-8;
+    }
   }
 }
