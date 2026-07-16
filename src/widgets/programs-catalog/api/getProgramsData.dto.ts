@@ -1,5 +1,8 @@
 import type { ExamType } from "@/entities/exam";
-import type { ProgramPlaces } from "@/entities/program/model/types";
+import type {
+  ProgramPlaces,
+  ProgramStudySchedule,
+} from "@/entities/program/model/types";
 
 export type ProgramDto = {
   id: string;
@@ -7,6 +10,7 @@ export type ProgramDto = {
   directionId: string;
   profiles: string[];
   formIds: string[];
+  studySchedule?: ProgramStudySchedule;
   duration: string;
   passingScore: number | null;
   tuitionFees: number | null;

@@ -53,6 +53,7 @@ const mapProgram = (
     direction,
     profiles: programDto.profiles,
     forms: mapProgramForms(programDto.formIds, forms),
+    studySchedule: programDto.studySchedule,
     duration: programDto.duration,
     passingScore: programDto.passingScore,
     tuitionFees: programDto.tuitionFees,

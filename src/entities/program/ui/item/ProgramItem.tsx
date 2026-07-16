@@ -7,6 +7,7 @@ import { ProgramExams } from "../exams/ProgramExams";
 import S from "./ProgramItem.module.scss";
 import { Notice } from "@/shared/ui/notice";
 import { CalendarIcon } from "@/assets/icons";
+import { getProgramStudySchedule } from "../../lib/getProgramStudySchedule";
 
 type ProgramItemProps = {
   program: Program;
@@ -23,9 +24,11 @@ export const ProgramItem = ({ program }: ProgramItemProps) => {
       </div>
       <div className={S["program-content__profiles"]}>
         <ProgramProfiles profiles={program.profiles} />
-        <Notice icon={<CalendarIcon />}>
-          Обучение на образовательной программе проходит по субботам
-        </Notice>
+        {program.studySchedule && (
+          <Notice icon={<CalendarIcon />}>
+            {getProgramStudySchedule(program.studySchedule)}
+          </Notice>
+        )}
       </div>
       <div className={S["program-content__details"]}>
         <ProgramDetails
