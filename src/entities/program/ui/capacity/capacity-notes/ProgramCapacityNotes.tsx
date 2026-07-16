@@ -1,6 +1,6 @@
 import { WarnIcon } from "@/assets/icons";
-import { CapacityNoteItem } from "./CapacityNoteItem";
 import S from "./ProgramCapacityNotes.module.scss";
+import { Notice } from "@/shared/ui/notice";
 
 type ProgramCapacityNotesProps = {
   showQuotas: boolean;
@@ -14,19 +14,19 @@ export const ProgramCapacityNotes = ({
   return (
     <div className={S["capacity-notes"]}>
       {showQuotas && (
-        <CapacityNoteItem icon={<WarnIcon />}>
+        <Notice icon={<WarnIcon />}>
           Места по квотам выделяются из общего количества бюджетных мест
-        </CapacityNoteItem>
+        </Notice>
       )}
       {showGrant && (
-        <CapacityNoteItem icon={<WarnIcon />}>
+        <Notice icon={<WarnIcon />}>
           *
           <a
             className={S["capacity-notes__link"]}
             href="https://mpgu.su/postuplenie/grant-priem/">
             Подробнее о грантовых местах {">>"}
           </a>
-        </CapacityNoteItem>
+        </Notice>
       )}
     </div>
   );
