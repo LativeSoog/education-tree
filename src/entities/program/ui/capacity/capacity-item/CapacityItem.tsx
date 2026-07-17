@@ -14,7 +14,7 @@ export const CapacityItem = ({ name, count, className }: CapacityItemProps) => {
         <span className={S["capacity-item__name"]}>{name}</span>
         <div className={S["capacity-item__value"]}>
           <span className={S["capacity-item__count"]}>{count}</span>
-          <span className={S["capacity-item__label"]}>мест</span>
+          {/* <span className={S["capacity-item__label"]}>мест</span> */}
         </div>
       </div>
     </div>

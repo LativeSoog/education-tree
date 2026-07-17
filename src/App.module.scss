@@ -3,3 +3,33 @@
   padding: 15px;
   margin: 0 auto;
 }
+
+.content,
+.content * {
+  box-sizing: border-box;
+}
+
+.content {
+  font-family: "Inter", system-ui, sans-serif;
+  color: #204462;
+  line-height: normal;
+}
+
+.content :where(h1, h2, h3, h4, p, ul, ol, li, button) {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin: 0;
+  padding: 0;
+}
+
+.content :where(ul, ol) {
+  list-style: none;
+}
+
+.content :where(button) {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}

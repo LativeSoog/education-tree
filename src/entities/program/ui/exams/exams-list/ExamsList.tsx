@@ -14,8 +14,10 @@ export const ExamsList = ({ label, items, variant }: ExamsListProps) => {
     <div className={S["exams-list"]}>
       <p className={S["exams-list__label"]}>{label}</p>
       <ul className={S["exams-list__list"]}>
-        {items.map((item) => (
-          <li className={S["exam-list__item"]}>
+        {items.map((item, index) => (
+          <li
+            className={S["exam-list__item"]}
+            key={index}>
             <ExamItem
               priority={item.priority}
               exams={item.exams}

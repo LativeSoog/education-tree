@@ -2,16 +2,18 @@ import type { Program } from "../../model/types";
 import { ProgramBadges } from "../badges/ProgramBadges";
 import { ProgramCapacity } from "../capacity/ProgramCapacity";
 import { ProgramDetails } from "../details/ProgramDetails";
+import { ProgramProfiles } from "../profiles/ProgramProfiles";
 import { ProgramExams } from "../exams/ProgramExams";
-import { ProgramSpecializations } from "../specializations/ProgramSpecializations";
 import S from "./ProgramItem.module.scss";
+import { Notice } from "@/shared/ui/notice";
+import { CalendarIcon } from "@/assets/icons";
+import { getProgramStudySchedule } from "../../lib/getProgramStudySchedule";
 
 type ProgramItemProps = {
   program: Program;
 };
 
 export const ProgramItem = ({ program }: ProgramItemProps) => {
-  console.log(program);
   return (
     <div className={S["program-content"]}>
       <div className={S["program-content__badges"]}>
@@ -20,8 +22,13 @@ export const ProgramItem = ({ program }: ProgramItemProps) => {
           form={program.forms[0]}
         />
       </div>
-      <div className={S["program-content__specializations"]}>
-        <ProgramSpecializations profiles={program.profiles} />
+      <div className={S["program-content__profiles"]}>
+        <ProgramProfiles profiles={program.profiles} />
+        {program.studySchedule && (
+          <Notice icon={<CalendarIcon />}>
+            {getProgramStudySchedule(program.studySchedule)}
+          </Notice>
+        )}
       </div>
       <div className={S["program-content__details"]}>
         <ProgramDetails

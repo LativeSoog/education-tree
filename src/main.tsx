@@ -5,12 +5,12 @@ import App from "./App.tsx";
 import { getProgramsData } from "./widgets/programs-catalog/api/getProgramsData.ts";
 
 const PROGRAMS_DATA_MANIFEST_URL = import.meta.env.PROD
-  ? "/wp-content/uploads/edu-tree/programs-catalog/manifest.json"
+  ? "/wp-content/themes/mpgu20/admission/education-tree/data/manifest.json"
   : "/programs-catalog/manifest.json";
 
 const programsDataResponse = await getProgramsData(PROGRAMS_DATA_MANIFEST_URL);
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById("edu-tree-root")!).render(
   <StrictMode>
     <App programsResponse={programsDataResponse} />
   </StrictMode>

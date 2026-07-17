@@ -1,0 +1,70 @@
+.program-profiles {
+  &__header {
+    @include d-flex($dir: row, $ai: center, $gap: $space-2);
+    margin-bottom: $space-4;
+
+    @include screen-md {
+      gap: $space-3;
+    }
+  }
+
+  &__icon {
+    @include d-flex($ai: center, $jc: center);
+    width: $icon-size-xl;
+    height: $icon-size-xl;
+    color: $icon-secondary;
+    background-color: $bg-icon-primary;
+    border-radius: $radius-md;
+    padding: $space-1;
+
+    @include screen-md {
+      width: $icon-size-2xl;
+      height: $icon-size-2xl;
+      padding: $space-2;
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 600;
+
+    @include screen-md {
+      font-size: 20px;
+    }
+  }
+
+  &__list {
+    @include d-flex($dir: column, $gap: $space-3);
+  }
+
+  &__profile-item {
+    @include d-flex($ai: center, $gap: $space-3);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    background-color: $white;
+    border: 1px solid $border-primary;
+    border-radius: $radius-md;
+    padding: $space-2 $space-3;
+
+    &::before {
+      content: "";
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      background-color: $turquoise-500;
+      border-radius: $radius-100;
+      box-shadow: $shadow-turquoise-soft;
+    }
+
+    @include screen-md {
+      font-size: 16px;
+      padding: $space-3 $space-4;
+
+      &::before {
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
+}

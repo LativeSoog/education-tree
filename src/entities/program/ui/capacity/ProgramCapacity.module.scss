@@ -1,9 +1,10 @@
 .program-capacity {
-  @include d-flex($dir: column, $gap: $space-5);
+  @include d-flex($dir: column);
   position: relative;
   background: rgba($bg-grey, 0.3);
   border-radius: $radius-md;
-  padding: $space-5;
+  padding: $space-5 $space-3;
+  padding-bottom: $space-3;
   z-index: 0;
 
   &::after {
@@ -13,7 +14,7 @@
     bottom: 0;
     width: 120px;
     height: 120px;
-    background: url("@/assets/icons/ui/people.svg") no-repeat;
+    background: url("@/assets/icons/ui/users-rounded.svg") no-repeat;
     opacity: 0.05;
     z-index: -1;
   }
@@ -25,13 +26,50 @@
     }
   }
 
+  &__header {
+    @include d-flex($dir: row, $gap: $space-2, $ai: center);
+  }
+
+  &__icon-wrapper {
+    @include d-flex($dir: column, $ai: center, $jc: center);
+    background-color: rgba($blue-500, 0.1);
+    border-radius: $radius-md;
+    padding: $space-1;
+  }
+
+  &__icon {
+    width: $icon-size-md;
+    height: $icon-size-md;
+    color: $icon-secondary;
+
+    @include screen-md {
+      width: $icon-size-lg;
+      height: $icon-size-lg;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+
+    @include screen-md {
+      font-size: 20px;
+    }
+  }
+
   &__items {
     @include d-flex($dir: column, $gap: $space-3);
+    margin-top: $space-5;
 
     @include screen-md {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: $space-5;
     }
+  }
+
+  &__note {
+    align-self: start;
+    margin-top: $space-7;
   }
 }

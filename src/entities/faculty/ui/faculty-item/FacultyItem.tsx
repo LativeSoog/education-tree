@@ -17,10 +17,16 @@ export const FacultyItem = ({ faculty, programs }: FacultyItemProps) => {
     setIsExpanded(!isExpanded);
   };
 
+  const totalProfiles = programs.reduce(
+    (sum, program) => sum + program.profiles.length,
+    0
+  );
+
   return (
-    <div className={S["faculty-item"]}>
+    <section className={S["faculty-item"]}>
       <FacultyHeader
         name={faculty.name}
+        totalProfiles={totalProfiles}
         isExpanded={isExpanded}
         onToggle={handleExpandedFaculty}
       />
@@ -28,6 +34,6 @@ export const FacultyItem = ({ faculty, programs }: FacultyItemProps) => {
         programs={programs}
         isExpanded={isExpanded}
       />
-    </div>
+    </section>
   );
 };

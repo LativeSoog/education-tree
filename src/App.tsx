@@ -1,5 +1,5 @@
 import S from "./App.module.scss";
-import { ProgramsCatalog } from "./widgets/programs-catalog/ProgramsCatalog";
+import { ProgramsCatalog } from "./widgets/programs-catalog/ui";
 import type { ProgramsDataResponse } from "./widgets/programs-catalog/api/getProgramsData.types";
 
 type AppProps = {

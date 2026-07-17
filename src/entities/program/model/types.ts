@@ -5,6 +5,7 @@ export type Program = {
   direction: ProgramDirection;
   profiles: string[];
   forms: ProgramEduForm[];
+  studySchedule?: ProgramStudySchedule;
   duration: string;
   passingScore: number | null;
   tuitionFees: number | null;
@@ -33,6 +34,8 @@ export type ProgramEduForm = {
   name: string;
   shortName: string;
 };
+
+export type ProgramStudySchedule = "sessions" | "saturdays" | "mixed";
 
 export type ProgramExamGroup = {
   type: ExamType;
