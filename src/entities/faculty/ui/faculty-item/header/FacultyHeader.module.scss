@@ -1,112 +1,76 @@
 .faculty-header {
-  @include d-flex($dir: row, $ai: center);
+  @include d-flex($gap: $space-2);
   width: 100%;
-  border: 2px solid $border-primary;
-  border-radius: $radius-md;
+
   padding: $space-3 $space-2;
-
-  @include screen-md {
-    padding: $space-4 $space-3;
-  }
-
-  &_expanded {
-    .faculty-header__more-wrapper {
-      transform: rotate(180deg);
-    }
-  }
-
-  &__icon-wrapper,
-  &__more-wrapper {
-    flex-shrink: 0;
-    background-color: $bg-grey;
-    padding: $space-1;
-
-    @include screen-md {
-      padding: $space-2;
-    }
-  }
-
-  &__icon-wrapper {
-    border-radius: $radius-sm;
-    margin-right: $space-2;
-  }
+  overflow: hidden;
 
   &__icon {
-    width: $icon-size-md;
-    height: $icon-size-md;
-    color: $icon-primary;
-
-    @include screen-md {
-      width: $icon-size-lg;
-      height: $icon-size-lg;
-    }
+    flex-shrink: 0;
+    width: $icon-size-lg;
+    height: $icon-size-lg;
+    background-color: rgba($blue-350, 0.2);
+    border-radius: $radius-sm;
+    padding: $space-1;
   }
 
   &__content {
-    @include d-flex($dir: column, $ai: start, $gap: $space-1);
+    @include d-flex($dir: column, $gap: $space-1, $ai: start);
   }
 
   &__name {
     font-size: 14px;
     font-weight: 600;
-    margin-right: $space-2;
-
-    @include screen-md {
-      font-size: 16px;
-    }
+    line-height: 1;
+    text-align: start;
   }
 
   &__info {
-    @include d-flex($dir: row);
-    flex-wrap: wrap;
-  }
+    @include d-flex($ai: start);
 
-  &__count,
-  &__toggle {
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1;
-
-    @include screen-md {
-      font-size: 14px;
+    @media (max-width: 430px) {
+      flex-direction: column;
     }
   }
 
-  &__count {
-    color: $blue-550;
+  &__programs-count,
+  &__toggle {
+    font-size: 12px;
+  }
+
+  &__programs-count {
+    color: $blue-300;
+    font-weight: 500;
     text-transform: uppercase;
   }
 
   &__toggle {
-    @include d-flex($dir: row, $ai: center);
-    position: relative;
+    @include d-flex($ai: center);
     color: $grey-600;
 
     &::before {
       content: "";
-      width: 4px;
-      height: 4px;
-      background-color: $grey-600;
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: $turquoise-600;
       border-radius: $radius-100;
-      margin: 0 $space-1;
+      margin: 0 $space-2;
+
+      @media (max-width: 430px) {
+        display: none;
+      }
     }
   }
 
-  &__more-wrapper {
-    @include d-flex($dir: row, $ai: center);
-    border-radius: $radius-100;
+  &__more {
+    flex-shrink: 0;
+    width: $icon-size-lg;
+    height: $icon-size-lg;
+    border: 1px solid $grey-100;
+    border-radius: $radius-sm;
+    box-shadow: $shadow-soft;
+    padding: $space-1;
     margin-left: auto;
-    transition: transform $motion-base ease-in;
-  }
-
-  &__more-icon {
-    width: $icon-size-sm;
-    height: $icon-size-sm;
-    color: $icon-primary;
-
-    @include screen-md {
-      width: $icon-size-md;
-      height: $icon-size-md;
-    }
   }
 }
