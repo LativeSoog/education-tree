@@ -15,12 +15,12 @@
   &__content-inner {
     @include d-flex($dir: column, $gap: $space-5);
     border-top: 1px solid $grey-200;
-    padding: $space-4 $space-2;
+    padding: $space-4 $space-3;
     overflow: hidden;
 
     @include screen-md {
       gap: $space-7;
-      padding: $space-5 $space-3;
+      padding: $space-5 $space-4;
     }
   }
 }
