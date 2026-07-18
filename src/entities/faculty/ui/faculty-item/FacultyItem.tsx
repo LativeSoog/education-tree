@@ -1,5 +1,6 @@
-import { useState } from "react";
 import S from "./FacultyItem.module.scss";
+import cn from "classnames";
+import { useState } from "react";
 import { FacultyHeader } from "./header/FacultyHeader";
 import { FacultyBody } from "./body/FacultyBody";
 import type { Program } from "@/entities/program/model/types";
@@ -23,7 +24,11 @@ export const FacultyItem = ({ faculty, programs }: FacultyItemProps) => {
   );
 
   return (
-    <section className={S["faculty-item"]}>
+    <section
+      className={cn(
+        S["faculty-item"],
+        isExpanded && S["faculty-item_expanded"]
+      )}>
       <FacultyHeader
         name={faculty.name}
         totalProfiles={totalProfiles}
