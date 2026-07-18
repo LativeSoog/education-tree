@@ -16,9 +16,9 @@ export const ProgramExams = ({ examGroups }: ProgramExamsProps) => {
   return (
     <section className={S["program-exams"]}>
       <div className={S["program-exams__header"]}>
-        <div className={S["program-exams__icon-wrapper"]}>
-          <ExamIcon className={S["program-exams__icon"]} />
-        </div>
+        <span className={S["program-exams__icon"]}>
+          <ExamIcon />
+        </span>
         <h3 className={S["program-exams__title"]}>
           ЕГЭ / Вступительные испытания
         </h3>
