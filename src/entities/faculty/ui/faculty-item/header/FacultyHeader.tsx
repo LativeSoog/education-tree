@@ -1,4 +1,5 @@
-import { DoubleArrow, FacultyIcon } from "@/assets/icons";
+import { FacultyIcon } from "@/assets/icons";
+import { ArrowDash } from "@/assets/icons/arrows";
 import S from "./FacultyHeader.module.scss";
 import cn from "classnames";
 import type { Faculty } from "@/entities/faculty/model/types";
@@ -19,28 +20,29 @@ export const FacultyHeader = ({
 }: FacultyHeaderProps) => {
   return (
     <button
+      type="button"
       className={cn(
         S["faculty-header"],
         isExpanded && S["faculty-header_expanded"]
       )}
       onClick={onToggle}>
-      <div className={S["faculty-header__icon-wrapper"]}>
-        <FacultyIcon className={S["faculty-header__icon"]} />
-      </div>
+      <span className={S["faculty-header__icon"]}>
+        <FacultyIcon />
+      </span>
       <div className={S["faculty-header__content"]}>
         <span className={S["faculty-header__name"]}>{name}</span>
         <div className={S["faculty-header__info"]}>
-          <span className={S["faculty-header__count"]}>
+          <span className={S["faculty-header__programs-count"]}>
             {`${totalProfiles} ${pluralizeNumber(totalProfiles, ["программа", "программы", "программ"])}`}
           </span>
           <span className={S["faculty-header__toggle"]}>
-            Нажмите, чтобы {isExpanded ? "свернуть" : "развернуть"}
+            Нажмите чтобы {isExpanded ? "свернуть" : "развернуть"}
           </span>
         </div>
       </div>
-      <div className={S["faculty-header__more-wrapper"]}>
-        <DoubleArrow className={S["faculty-header__more-icon"]} />
-      </div>
+      <span className={S["faculty-header__more"]}>
+        <ArrowDash />
+      </span>
     </button>
   );
 };

@@ -1,0 +1,1 @@
+export { pluralizeNumber } from "./pluralizeNumber";
