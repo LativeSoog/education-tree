@@ -1,24 +1,36 @@
-.program-item-preview {
+.program-preview {
+  &__badges,
   &__profiles {
-    @include d-flex($dir: column, $gap: $space-5);
-    position: relative;
-    background-color: rgba($bg-grey, $alpha: 0.3);
-    border: 1px solid $border-primary;
-    border-radius: $radius-md;
-    padding: $space-5 $space-3;
-    margin-top: $space-6;
-    overflow: hidden;
+    border-bottom: 1px solid $grey-200;
+  }
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: clamp(120px, 18vw, 160px);
-      height: clamp(120px, 18vw, 160px);
-      background-color: rgba($blue-350, 0.2);
-      mask: url("@/assets/patterns/big-dots.svg") top right/contain no-repeat;
-      pointer-events: none;
+  &__badges {
+    padding: $space-4 $space-3;
+
+    @include screen-md {
+      padding: $space-5 $space-4;
+    }
+  }
+
+  &__profiles {
+    background-color: rgba($blue-350, 0.03);
+    padding: var(--program-item-section-padding);
+  }
+
+  &__more {
+    padding: $space-4 $space-3;
+
+    @include screen-md {
+      @include d-flex($dir: column, $ai: center);
+      padding: $space-5 $space-4;
+    }
+  }
+
+  &__more-btn {
+    --button-width: 100%;
+
+    @include screen-md {
+      --button-width: 400px;
     }
   }
 }

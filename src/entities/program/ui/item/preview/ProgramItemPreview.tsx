@@ -5,33 +5,42 @@ import type { Program } from "../../../model/types";
 import { ProgramBadges } from "../../badges/ProgramBadges";
 import { ProgramProfiles } from "../../profiles/ProgramProfiles";
 import S from "./ProgramItemPreview.module.scss";
+import { Button } from "@/shared/ui/button";
 
-type ProgramItemPreviewProps = Pick<
-  Program,
-  "direction" | "forms" | "profiles" | "studySchedule"
->;
+type ProgramItemPreviewProps = {
+  program: Pick<Program, "direction" | "forms" | "profiles" | "studySchedule">;
+  isExpanded: boolean;
+  onToggle: () => void;
+};
 
 export const ProgramItemPreview = ({
-  direction,
-  forms,
-  profiles,
-  studySchedule,
+  program,
+  isExpanded,
+  onToggle,
 }: ProgramItemPreviewProps) => {
   return (
     <div className={S["program-preview"]}>
       <div className={S["program-preview__badges"]}>
         <ProgramBadges
-          direction={direction}
-          form={forms[0]}
+          direction={program.direction}
+          form={program.forms[0]}
         />
       </div>
       <div className={S["program-preview__profiles"]}>
-        <ProgramProfiles profiles={profiles} />
-        {studySchedule && (
+        <ProgramProfiles profiles={program.profiles} />
+        {program.studySchedule && (
           <Notice icon={<CalendarIcon />}>
-            {getProgramStudySchedule(studySchedule)}
+            {getProgramStudySchedule(program.studySchedule)}
           </Notice>
         )}
+      </div>
+      <div className={S["program-preview__more"]}>
+        <Button
+          className={S["program-preview__more-btn"]}
+          variant="secondary"
+          onClick={onToggle}>
+          {isExpanded ? "Скрыть" : "Показать"} подробную информацию
+        </Button>
       </div>
     </div>
   );
