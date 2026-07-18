@@ -1,28 +1,36 @@
 .button {
+  --button-padding: #{$space-2} #{$space-2};
+
   max-width: var(--button-max-width, 100%);
   width: var(--button-width, auto);
   font-size: 14px;
   border-radius: $radius-md;
   transition: transform $motion-fast ease-in-out;
-  padding: var(--button-padding, #{$space-2 $space-6});
+  padding: var(--button-padding);
   overflow: hidden;
 
   @include screen-md {
+    --button-padding: #{$space-2} #{$space-4};
     font-size: 16px;
   }
 
   &_primary {
     color: $white;
-    background-color: $blue-550;
+    background-color: $turquoise-600;
   }
 
   &_secondary {
-    color: $blue-550;
+    color: $turquoise-600;
     background-color: transparent;
-    border: 1px solid $blue-550;
+    border: 1px solid $turquoise-600;
+
+    @include hover {
+      background-color: rgba($turquoise-600, 0.06);
+      border-color: darken($turquoise-600, 5%);
+    }
   }
 
   @include hover {
-    transform: scale(1.03);
+    transform: translateY(-1px);
   }
 }

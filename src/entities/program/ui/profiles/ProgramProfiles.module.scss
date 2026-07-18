@@ -1,7 +1,12 @@
 .program-profiles {
+  @include d-flex($dir: column, $gap: $space-2);
+
+  @include screen-md {
+    gap: $space-3;
+  }
+
   &__header {
-    @include d-flex($dir: row, $ai: center, $gap: $space-2);
-    margin-bottom: $space-4;
+    @include d-flex($dir: row, $gap: $space-2, $ai: center);
 
     @include screen-md {
       gap: $space-3;
@@ -10,26 +15,25 @@
 
   &__icon {
     @include d-flex($ai: center, $jc: center);
-    width: $icon-size-xl;
-    height: $icon-size-xl;
+    width: $icon-size-lg;
+    height: $icon-size-lg;
     color: $icon-secondary;
     background-color: $bg-icon-primary;
     border-radius: $radius-md;
     padding: $space-1;
 
     @include screen-md {
-      width: $icon-size-2xl;
-      height: $icon-size-2xl;
-      padding: $space-2;
+      width: $icon-size-xl;
+      height: $icon-size-xl;
     }
   }
 
   &__name {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 
     @include screen-md {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 
