@@ -17,18 +17,18 @@ export const ProgramItemContent = ({
   examGroups,
 }: ProgramItemContentProps) => {
   return (
-    <div className={S["program-item-content"]}>
-      <div className={S["program-item-content__details"]}>
+    <div className={S["program-content"]}>
+      <div className={S["program-content__details"]}>
         <ProgramDetails
           duration={duration}
           passingScore={passingScore}
           tuitionFees={tuitionFees}
         />
       </div>
-      <div className={S["program-item-content__capacity"]}>
+      <div className={S["program-content__capacity"]}>
         <ProgramCapacity places={places} />
       </div>
-      <div className={S["program-item-content__exams"]}>
+      <div className={S["program-content__exams"]}>
         <ProgramExams examGroups={examGroups} />
       </div>
     </div>

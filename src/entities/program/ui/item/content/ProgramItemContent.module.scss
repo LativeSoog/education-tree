@@ -1,11 +1,16 @@
-.program-item-content {
-  &__details,
-  &__capacity,
-  &__exams {
-    margin-top: $space-7;
+.program-content {
+  &__details {
+    padding: var(--program-item-section-padding);
+    padding-block: $space-7;
+  }
 
-    @include screen-md {
-      margin-top: $space-8;
-    }
+  &__capacity {
+    background-color: rgba($blue-350, 0.03);
+    border-block: 1px solid $grey-200;
+    padding: var(--program-item-section-padding);
+  }
+
+  &__exams {
+    padding: var(--program-item-section-padding);
   }
 }
