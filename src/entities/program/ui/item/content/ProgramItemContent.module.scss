@@ -1,0 +1,11 @@
+.program-item-content {
+  &__details,
+  &__capacity,
+  &__exams {
+    margin-top: $space-7;
+
+    @include screen-md {
+      margin-top: $space-8;
+    }
+  }
+}
