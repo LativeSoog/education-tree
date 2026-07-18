@@ -1,10 +1,6 @@
 .program-capacity {
   @include d-flex($dir: column);
   position: relative;
-  background: rgba($bg-grey, 0.3);
-  border-radius: $radius-md;
-  padding: $space-5 $space-3;
-  padding-bottom: $space-3;
   z-index: 0;
 
   &::after {
@@ -28,23 +24,25 @@
 
   &__header {
     @include d-flex($dir: row, $gap: $space-2, $ai: center);
-  }
 
-  &__icon-wrapper {
-    @include d-flex($dir: column, $ai: center, $jc: center);
-    background-color: rgba($blue-500, 0.1);
-    border-radius: $radius-md;
-    padding: $space-1;
+    @include screen-md {
+      gap: $space-3;
+    }
   }
 
   &__icon {
-    width: $icon-size-md;
-    height: $icon-size-md;
+    @include d-flex($ai: center, $jc: center);
+    flex-shrink: 0;
+    width: $icon-size-lg;
+    height: $icon-size-lg;
     color: $icon-secondary;
+    background-color: $bg-icon-primary;
+    border-radius: $radius-md;
+    padding: $space-1;
 
     @include screen-md {
-      width: $icon-size-lg;
-      height: $icon-size-lg;
+      width: $icon-size-xl;
+      height: $icon-size-xl;
     }
   }
 
@@ -53,7 +51,7 @@
     font-weight: 600;
 
     @include screen-md {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 

@@ -18,9 +18,9 @@ export const ProgramCapacity = ({ places }: ProgramCapacityProps) => {
   return (
     <div className={S["program-capacity"]}>
       <div className={S["program-capacity__header"]}>
-        <div className={S["program-capacity__icon-wrapper"]}>
-          <UsersIcon className={S["program-capacity__icon"]} />
-        </div>
+        <span className={S["program-capacity__icon"]}>
+          <UsersIcon />
+        </span>
         <h3 className={S["program-capacity__title"]}>Количество мест</h3>
       </div>
       <div className={S["program-capacity__items"]}>
