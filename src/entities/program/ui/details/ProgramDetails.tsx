@@ -3,6 +3,7 @@ import S from "./ProgramDetails.module.scss";
 import { CalendarIcon, RewardIcon, RubleIcon } from "@/assets/icons";
 import type { Program } from "../../model/types";
 import formatNumber from "@/shared/lib/format/formatNumber";
+import { DetailItem } from "./detail-item/DetailItem";
 
 type ProgramDetailsProps = Pick<
   Program,
@@ -17,28 +18,25 @@ export const ProgramDetails = ({
   return (
     <div className={S["program-details"]}>
       {duration && (
-        <StatItem
+        <DetailItem
           icon={<CalendarIcon />}
-          title="Срок обучения"
-          className={S["program-details__item"]}>
+          title="Срок обучения">
           {duration}
-        </StatItem>
+        </DetailItem>
       )}
       {passingScore && (
-        <StatItem
+        <DetailItem
           icon={<RewardIcon />}
-          title="Проходной балл 2025"
-          className={S["program-details__item"]}>
+          title="Проходной балл 2025">
           {passingScore}
-        </StatItem>
+        </DetailItem>
       )}
       {tuitionFees && (
-        <StatItem
+        <DetailItem
           icon={<RubleIcon />}
-          title="Стоимость обучения"
-          className={S["program-details__item"]}>
+          title="Стоимость обучения">
           {formatNumber(tuitionFees)} &#8381;/год
-        </StatItem>
+        </DetailItem>
       )}
     </div>
   );

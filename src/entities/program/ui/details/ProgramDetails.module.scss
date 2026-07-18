@@ -1,21 +1,8 @@
 .program-details {
-  @include d-flex($dir: row, $gap: $space-6);
-  flex-wrap: wrap;
+  @include d-flex($dir: column, $gap: $space-5);
 
-  &__item {
-    position: relative;
-
-    @include screen-md {
-      &:not(:last-child)::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: calc(-#{$space-6} / 2);
-        bottom: 0;
-        width: 2px;
-        background-color: $bg-grey;
-        border-radius: $radius-sm;
-      }
-    }
+  @include screen-md {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   }
 }
