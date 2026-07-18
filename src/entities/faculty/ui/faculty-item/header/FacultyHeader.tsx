@@ -15,12 +15,16 @@ type FacultyHeaderProps = {
 export const FacultyHeader = ({
   name,
   totalProfiles,
+  isExpanded,
   onToggle,
 }: FacultyHeaderProps) => {
   return (
     <button
       type="button"
-      className={S["faculty-header"]}
+      className={cn(
+        S["faculty-header"],
+        isExpanded && S["faculty-header_expanded"]
+      )}
       onClick={onToggle}>
       <span className={S["faculty-header__icon"]}>
         <FacultyIcon />
@@ -32,7 +36,7 @@ export const FacultyHeader = ({
             {`${totalProfiles} ${pluralizeNumber(totalProfiles, ["программа", "программы", "программ"])}`}
           </span>
           <span className={S["faculty-header__toggle"]}>
-            Нажмите чтобы развернуть
+            Нажмите чтобы {isExpanded ? "свернуть" : "развернуть"}
           </span>
         </div>
       </div>
