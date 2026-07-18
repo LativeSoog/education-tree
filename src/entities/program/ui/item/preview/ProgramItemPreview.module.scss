@@ -13,8 +13,13 @@
   }
 
   &__profiles {
+    @include d-flex($dir: column, $gap: $space-5);
     background-color: rgba($blue-350, 0.03);
     padding: var(--program-item-section-padding);
+
+    @include screen-md {
+      gap: $space-6;
+    }
   }
 
   &__more {
