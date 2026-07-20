@@ -1,41 +1,52 @@
 .program-preview {
-  &__badges,
-  &__profiles {
-    border-bottom: 1px solid $grey-200;
-  }
-
   &__badges {
-    padding: $space-4 $space-3;
+    padding: $space-5 var(--program-section-padding-inline);
+    border-bottom: var(--program-section-border);
 
     @include screen-md {
-      padding: $space-5 $space-4;
+      padding-block: $space-6;
     }
+  }
+
+  &__profiles,
+  &__more {
+    padding: var(--program-section-padding-block)
+      var(--program-section-padding-inline);
   }
 
   &__profiles {
     @include d-flex($dir: column, $gap: $space-5);
-    background-color: rgba($blue-350, 0.03);
-    padding: var(--program-item-section-padding);
+    position: relative;
+    background-color: rgba($blue-350, 0.04);
+    border-bottom: var(--program-section-border);
+    z-index: 0;
 
     @include screen-md {
       gap: $space-6;
     }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: clamp(120px, 18vw, 160px);
+      height: clamp(120px, 18vw, 160px);
+      background-color: rgba($blue-350, 0.04);
+      mask: url("@/assets/patterns/big-dots.svg") top / contain no-repeat;
+      z-index: -1;
+    }
   }
 
   &__more {
-    padding: $space-4 $space-3;
-
-    @include screen-md {
-      @include d-flex($dir: column, $ai: center);
-      padding: $space-5 $space-4;
-    }
+    @include d-flex($dir: column, $ai: center);
   }
 
   &__more-btn {
     --button-width: 100%;
 
     @include screen-md {
-      --button-width: 400px;
+      --button-width: auto;
     }
   }
 }

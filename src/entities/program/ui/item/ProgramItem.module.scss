@@ -1,12 +1,15 @@
 .program-item {
-  --program-item-section-padding: #{$space-3};
+  --program-section-border: 1px solid #{$grey-200};
+  --program-section-padding-inline: #{$space-3};
+  --program-section-padding-block: #{$space-4};
 
   border: 1px solid $border-primary;
   border-radius: $radius-md;
   box-shadow: $shadow-soft;
 
   @include screen-md {
-    --program-item-section-padding: #{$space-4};
+    --program-section-padding-inline: #{$space-4};
+    --program-section-padding-block: #{$space-5};
   }
 
   &__content {
