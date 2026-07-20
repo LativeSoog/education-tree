@@ -1,0 +1,32 @@
+.program-heading {
+  @include d-flex($dir: row, $ai: center, $gap: $space-2);
+
+  @include screen-md {
+    gap: $space-3;
+  }
+
+  &__icon {
+    @include d-flex($ai: center, $jc: center);
+    flex-shrink: 0;
+    width: $icon-size-lg;
+    height: $icon-size-lg;
+    color: $icon-secondary;
+    background-color: $bg-icon-primary;
+    border-radius: $radius-md;
+    padding: $space-1;
+
+    @include screen-md {
+      width: $icon-size-xl;
+      height: $icon-size-xl;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+
+    @include screen-md {
+      font-size: 18px;
+    }
+  }
+}

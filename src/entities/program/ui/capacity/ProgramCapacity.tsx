@@ -1,5 +1,6 @@
 import { UsersIcon } from "@/assets/icons";
 import type { ProgramPlaces } from "../../model/types";
+import { ProgramSectionHeading } from "../section-heading/ProgramSectionHeading";
 import { CapacityItem } from "./capacity-item/CapacityItem";
 import S from "./ProgramCapacity.module.scss";
 import { ProgramCapacityNotes } from "./capacity-notes/ProgramCapacityNotes";
@@ -17,12 +18,9 @@ export const ProgramCapacity = ({ places }: ProgramCapacityProps) => {
 
   return (
     <div className={S["program-capacity"]}>
-      <div className={S["program-capacity__header"]}>
-        <span className={S["program-capacity__icon"]}>
-          <UsersIcon />
-        </span>
-        <h3 className={S["program-capacity__title"]}>Количество мест</h3>
-      </div>
+      <ProgramSectionHeading icon={<UsersIcon />}>
+        Количество мест
+      </ProgramSectionHeading>
       <div className={S["program-capacity__items"]}>
         {places.budget !== null && (
           <CapacityItem

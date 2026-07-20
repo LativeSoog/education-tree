@@ -1,4 +1,5 @@
 import { ExamIcon } from "@/assets/icons";
+import { ProgramSectionHeading } from "../section-heading/ProgramSectionHeading";
 import S from "./ProgramExams.module.scss";
 import { ExamsList } from "./exams-list/ExamsList";
 import type { ProgramExamGroup } from "../../model/types";
@@ -15,14 +16,9 @@ export const ProgramExams = ({ examGroups }: ProgramExamsProps) => {
 
   return (
     <section className={S["program-exams"]}>
-      <div className={S["program-exams__header"]}>
-        <span className={S["program-exams__icon"]}>
-          <ExamIcon />
-        </span>
-        <h3 className={S["program-exams__title"]}>
-          ЕГЭ / Вступительные испытания
-        </h3>
-      </div>
+      <ProgramSectionHeading icon={<ExamIcon />}>
+        ЕГЭ / Вступительные испытания
+      </ProgramSectionHeading>
       <div className={S["program-exams__main"]}>
         {examGroups.map((group) => (
           <ExamsList
