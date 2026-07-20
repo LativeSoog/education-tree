@@ -1,5 +1,5 @@
 .program-exams {
-  @include d-flex($dir: column, $gap: $space-5);
+  @include d-flex($dir: column, $gap: var(--program-section-content-gap));
 
   &__main {
     @include d-flex($dir: column, $gap: $space-5);

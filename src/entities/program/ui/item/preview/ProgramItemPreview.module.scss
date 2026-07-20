@@ -32,7 +32,7 @@
       right: 10px;
       width: clamp(120px, 18vw, 160px);
       height: clamp(120px, 18vw, 160px);
-      background-color: rgba($blue-350, 0.04);
+      background-color: rgba($blue-350, 0.08);
       mask: url("@/assets/patterns/big-dots.svg") top / contain no-repeat;
       z-index: -1;
     }

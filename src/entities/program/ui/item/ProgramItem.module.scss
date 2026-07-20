@@ -3,6 +3,8 @@
   --program-section-padding-inline: #{$space-3};
   --program-section-padding-block: #{$space-4};
 
+  --program-section-content-gap: #{$space-4};
+
   border: 1px solid $border-primary;
   border-radius: $radius-md;
   box-shadow: $shadow-soft;
@@ -10,6 +12,8 @@
   @include screen-md {
     --program-section-padding-inline: #{$space-4};
     --program-section-padding-block: #{$space-5};
+
+    --program-section-content-gap: #{$space-5};
   }
 
   &__content {

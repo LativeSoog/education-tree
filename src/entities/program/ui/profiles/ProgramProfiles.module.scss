@@ -1,9 +1,5 @@
 .program-profiles {
-  @include d-flex($dir: column, $gap: $space-2);
-
-  @include screen-md {
-    gap: $space-3;
-  }
+  @include d-flex($dir: column, $gap: var(--program-section-content-gap));
 
   &__list {
     @include d-flex($dir: column, $gap: $space-3);

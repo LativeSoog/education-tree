@@ -10,7 +10,7 @@
 
   &__items {
     @include d-flex($dir: column, $gap: $space-3);
-    margin-top: $space-5;
+    margin-top: var(--program-section-content-gap);
 
     @include screen-md {
       display: grid;
