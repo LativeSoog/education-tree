@@ -1,5 +1,5 @@
 .program-badges {
-  @include d-flex($dir: row, $gap: $space-1 $space-3);
+  @include d-flex($dir: row, $gap: $space-2 $space-3);
   flex-wrap: wrap;
 
   &__spec {
@@ -20,7 +20,7 @@
       height: 4px;
       background-color: $blue-300;
       border-radius: $radius-100;
-      margin: 0 $space-1;
+      margin: 0 $space-2;
     }
   }
 }

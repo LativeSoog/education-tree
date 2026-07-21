@@ -8,7 +8,12 @@ import S from "./ProgramItemPreview.module.scss";
 import { Button } from "@/shared/ui/button";
 
 type ProgramItemPreviewProps = {
-  program: Pick<Program, "direction" | "forms" | "profiles" | "studySchedule">;
+  program: Pick<
+    Program,
+    "direction" | "forms" | "profiles" | "studySchedule" | "passingScore"
+  > & {
+    places: Pick<Program["places"], "budget" | "grant" | "paid">;
+  };
   isExpanded: boolean;
   onToggle: () => void;
 };
@@ -18,12 +23,23 @@ export const ProgramItemPreview = ({
   isExpanded,
   onToggle,
 }: ProgramItemPreviewProps) => {
+  const hasBudgetPlaces =
+    program.places.budget !== null && program.places.budget > 0;
+  const hasPaidPlaces = program.places.paid !== null && program.places.paid > 0;
+  const hasGrantPlaces =
+    program.places.grant !== null && program.places.grant > 0;
+  const isPaidOnly = hasPaidPlaces && !hasBudgetPlaces && !hasGrantPlaces;
+  const isNewProgram = program.passingScore === null;
+
   return (
     <div className={S["program-preview"]}>
       <div className={S["program-preview__badges"]}>
         <ProgramBadges
           direction={program.direction}
           form={program.forms[0]}
+          isPaidOnly={isPaidOnly}
+          hasGrantPlaces={hasGrantPlaces}
+          isNewProgram={isNewProgram}
         />
       </div>
       <div className={S["program-preview__profiles"]}>
