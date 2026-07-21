@@ -19,7 +19,7 @@ export const DetailItem = ({
     <section className={cn(S["detail-item"], className)}>
       {icon && <span className={S["detail-item__icon"]}>{icon}</span>}
       <div className={S["detail-item__info"]}>
-        <h4 className={S["detail-item__title"]}>{title}</h4>
+        <span className={S["detail-item__title"]}>{title}</span>
         <div className={S["detail-item__content"]}>{children}</div>
       </div>
     </section>
