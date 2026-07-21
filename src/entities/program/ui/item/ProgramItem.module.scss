@@ -8,6 +8,7 @@
   border: 1px solid $border-primary;
   border-radius: $radius-md;
   box-shadow: $shadow-soft;
+  transition: border-color $motion-base ease-in-out;
 
   @include screen-md {
     --program-section-padding-inline: #{$space-4};
@@ -32,6 +33,8 @@
   }
 
   &_expanded {
+    border-color: rgba($turquoise-500, 0.4);
+
     .program-item__content {
       grid-template-rows: 1fr;
     }
