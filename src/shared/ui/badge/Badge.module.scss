@@ -1,19 +1,45 @@
 .badge {
+  --badge-text-color: inherit;
+  --badge-font-size: 12px;
+  --badge-font-weight: 500;
+  --badge-bg-color: transparent;
+
   display: inline-block;
-  font-size: var(--badge-fs, 10px);
-  font-weight: var(--badge-fw, 600);
+  color: var(--badge-text-color);
+  font-size: var(--badge-font-size);
+  font-weight: var(--badge-font-weight);
+  line-height: 1.2;
+  background-color: var(--badge-bg-color);
   border-radius: $radius-sm;
-  padding: $space-1 $space-2;
+  padding: $space-1 $space-3;
   overflow: hidden;
 
+  @include screen-md {
+    --badge-font-size: 14px;
+  }
+
   &_blue {
-    background-color: rgb($blue-300, 0.1);
-    border: 1px solid $blue-300;
+    --badge-text-color: #{$blue-350};
+    --badge-bg-color: #{rgba($blue-300, 0.12)};
   }
 
   &_teal {
-    background-color: rgba($blue-500, 0.1);
-    border: 1px solid $blue-500;
-    color: $blue-550;
+    --badge-text-color: #{$turquoise-600};
+    --badge-bg-color: #{rgba($turquoise-500, 0.12)};
+  }
+
+  &_red {
+    --badge-text-color: #{$red-700};
+    --badge-bg-color: #{rgba($red-500, 0.12)};
+  }
+
+  &_gold {
+    --badge-text-color: #{$gold-700};
+    --badge-bg-color: #{rgba($gold-500, 0.12)};
+  }
+
+  &_green {
+    --badge-text-color: #{$green-700};
+    --badge-bg-color: #{rgba($green-500, 0.12)};
   }
 }
