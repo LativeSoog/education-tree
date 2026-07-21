@@ -1,4 +1,3 @@
-import { StatItem } from "@/shared/ui/stat-item/StatItem";
 import S from "./ProgramDetails.module.scss";
 import { CalendarIcon, RewardIcon, RubleIcon } from "@/assets/icons";
 import type { Program } from "../../model/types";
