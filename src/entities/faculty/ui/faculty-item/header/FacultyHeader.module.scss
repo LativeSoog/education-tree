@@ -81,6 +81,7 @@
     &::before {
       content: "";
       display: inline-block;
+      flex-shrink: 0;
       width: 6px;
       height: 6px;
       background-color: $turquoise-600;
